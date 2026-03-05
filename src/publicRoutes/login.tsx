@@ -5,10 +5,12 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import PersonIcon from '@mui/icons-material/Person';
 import Button from '@mui/material/Button';
 import Typography from "@mui/material/Typography";
-import secureImage from "../assets/Data-security.jpg";
+import secureImage from ".././assets/image/Data-security.jpg";
 import GppGoodIcon from '@mui/icons-material/GppGood';
 import GppMaybeIcon from '@mui/icons-material/GppMaybe';
-
+import {Link, useNavigate} from 'react-router-dom'
+import { useDispatch } from "react-redux";
+import { login } from "../privateRoutes/authendicationSlice/authSlice";
 
 
 function Login() {
@@ -18,6 +20,9 @@ function Login() {
     const [showPassword,setShowPassword]=useState<boolean>(false);
     const [correctDetails,setCorrectDetails]=useState<string>('');
     const loginnamePattern=/^[a-zA-Z0-9](?:[a-zA-Z0-9._-]{1,18}[a-zA-Z0-9])$/;
+    const dispatch=useDispatch();
+    const navigate=useNavigate();
+
 
     function usernameHandler(event:React.ChangeEvent<HTMLInputElement>) {
         setUsername(event.target.value);
@@ -44,7 +49,13 @@ function Login() {
         else{
             setTimeout(()=>{
                 setCorrectDetails("correct");
-            },1000)
+            },900);
+
+
+            setTimeout(()=>{
+                dispatch(login({adminname:username}))
+                navigate("/adminsight")
+            },1200)
         }
     }
     return(
@@ -68,6 +79,9 @@ function Login() {
 
                     <form className="flex flex-col items-center gap-3 z-[10000]
                      rounded-2xl p-4 py-6 bg-main-bg "  onSubmit={submitHandler}>
+                        <div>
+                            <Typography variant="h6" component="h6" sx={{fontSize:'20px'}}>welcome to Insight Board</Typography>
+                        </div>
                         <div className="flex items-center gap-[2px] border-[1px] border-[rgba(0,0,0,0.2)] rounded-[25px] pr-2 w-[270px] ">
                             <TextField required id="outlined-required" placeholder="username"
                             value={username} onChange={usernameHandler} 
@@ -110,6 +124,11 @@ function Login() {
                         <div>
                             <Button variant="contained" type="submit" sx={{textTransform:'none',padding:'5px',borderRadius:'8px'}}>Login</Button>
                         </div>
+                        <div>
+                            <Typography variant="h6" component="h6" sx={{fontSize:'16px'}}>new to Insight Board?
+                                <Link to="/signup" className="text-blue-500 text-[18px]" > signup</Link> </Typography>
+                        </div>
+
                     
                     </form>
                 </section>

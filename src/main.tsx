@@ -5,7 +5,9 @@ import App from './App.tsx'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Login from './publicRoutes/login.tsx'
 import Signup from './publicRoutes/signup.tsx'
-
+import { Provider } from 'react-redux';
+import { store } from '././app/store.tsx'
+import AdminDashboard from './privateRoutes/admin';
 
 
 const routerpages=createBrowserRouter([
@@ -20,13 +22,19 @@ const routerpages=createBrowserRouter([
       {
         path:'/signup',
         element:<Signup />
+      },
+      {
+        path:'/adminsight',
+        element:<AdminDashboard />
       }
     ]
   }
 ])
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <RouterProvider router={routerpages} />
-  </StrictMode>
+  <Provider store={store}>
+    <StrictMode>
+      <RouterProvider router={routerpages} />
+    </StrictMode>
+  </Provider>
 )
