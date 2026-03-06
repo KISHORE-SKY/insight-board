@@ -19,7 +19,8 @@ function Login() {
     const [password,setPassword]=useState<string>('');
     const [showPassword,setShowPassword]=useState<boolean>(false);
     const [correctDetails,setCorrectDetails]=useState<string>('');
-    const loginnamePattern=/^[a-zA-Z0-9](?:[a-zA-Z0-9._-]{1,18}[a-zA-Z0-9])$/;
+    const namePattern:string='demoUser';
+    const passwordPattern:string='demoPassword'
     const dispatch=useDispatch();
     const navigate=useNavigate();
 
@@ -43,7 +44,7 @@ function Login() {
     function submitHandler(event:React.FormEvent<HTMLFormElement>){
         event.preventDefault();
 
-        if(!loginnamePattern.test(username)){
+        if(username.trim() !== namePattern || password.trim() !== passwordPattern){
             setCorrectDetails("wrong");
         }
         else{
@@ -71,7 +72,7 @@ function Login() {
                 </div>
                 <section className=" border-[1px] border-[rgba(0,0,0,0.4)] grid grid-cols-[minmax(280px,290px)] justify-center
                 rounded-2xl z-[10000] bg-main-bg sm:grid-cols-[minmax(350px,375px)] md:grid-cols-[minmax(270px,295px)_minmax(300px,325px)]
-                md:h-[350px] md:items-center lg:grid-cols-[minmax(320px,350px)_minmax(325px,345px)]">
+                md:h-[375px] md:items-center lg:grid-cols-[minmax(320px,350px)_minmax(325px,345px)]">
                     <div className="z-[1000] rounded-[10px_10px_0px_0px] h-[220px] md:h-full">
                         <img src={secureImage} alt="security image" className="rounded-[16px_16px_0px_0px] w-full md:h-full 
                         md:rounded-[16px_0px_0px_16px]" />
@@ -80,7 +81,8 @@ function Login() {
                     <form className="flex flex-col items-center gap-3 z-[10000]
                      rounded-2xl p-4 py-6 bg-main-bg "  onSubmit={submitHandler}>
                         <div>
-                            <Typography variant="h6" component="h6" sx={{fontSize:'20px'}}>welcome to Insight Board</Typography>
+                            <Typography variant="h6" component="h6" sx={{fontSize:'20px',textAlign:'center'}}>welcome to Insight Board</Typography>
+                            <p className="bg-green-300 text-main-text p-1 rounded-lg text-sm text-center">use username as: demoUser, use password as: demoPassword</p>
                         </div>
                         <div className="flex items-center gap-[2px] border-[1px] border-[rgba(0,0,0,0.2)] rounded-[25px] pr-2 w-[270px] ">
                             <TextField required id="outlined-required" placeholder="username"

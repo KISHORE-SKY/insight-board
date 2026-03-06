@@ -28,8 +28,9 @@ function Signup() {
         const dispatch=useDispatch();
         const navigate=useNavigate();
 
-        const loginnamePattern=/^[a-zA-Z0-9](?:[a-zA-Z0-9._-]{1,18}[a-zA-Z0-9])$/;
-        const signupEmailPattern=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
+        const namePattern:string='demoUser';
+        const emailPattern:string='demouser456@gmail.com';
+        const passwordPattern:string='demoPassword';
 
         function usernameHandler(event:React.ChangeEvent<HTMLInputElement>){
             setUsername(event.target.value);
@@ -46,7 +47,8 @@ function Signup() {
         function submitHandler(event:React.FormEvent<HTMLFormElement>) {
             event.preventDefault();
 
-            if(!loginnamePattern.test(username) || !signupEmailPattern.test(email) || username.trim()==="" || email.trim()==="" || password.trim()==="" || confirm.trim()===""){
+            if(username.trim() !== namePattern || email.trim() !== emailPattern || 
+            password.trim() !== passwordPattern || username.trim()==="" || email.trim()==="" || password.trim()==="" || confirm.trim()===""){
                 setCorrectDetails("wrong");
             }
             else if(password.trim() !== confirm.trim()){
@@ -98,10 +100,10 @@ function Signup() {
                     </div>
 
                     <form className="flex flex-col items-center gap-4 py-6 z-[10000] rounded-2xl bg-main-bg" onSubmit={submitHandler}>
-                        <div className="text-center h-[48px]">
-                            <Typography variant="h5" component="h5" sx={{fontSize:'20px'}}>welcome to Insight Board</Typography>
-                            {correctDetails==="wrong" && <p className="bg-[rgba(253,139,147,0.5)] w-fit p-1 
-                            rounded-sm text-sm">username accept only _ - special characters </p>}
+                        <div className="text-center h-[79px] px-1">
+                            <Typography variant="h5" component="h5" sx={{fontSize:'20px',textAlign:'center'}}>welcome to Insight Board</Typography>
+                            <p className="bg-green-300 text-main-text w-fit p-1 
+                            rounded-lg text-[12px] text-center">use username as: demoUser, use email as: demouser456@gmail.com, use password as: demoPassword</p>
                         </div>
                         <div className="inputs">
                             <TextField type="text" placeholder="username" size="small" required value={username} onChange={usernameHandler}

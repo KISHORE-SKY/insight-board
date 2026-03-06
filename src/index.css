@@ -5,11 +5,15 @@
 @theme{
     --color-main-bg:#ffffff;
     --color-main-text:#000000;
+    --color-main-cart:rgba(225,225,225,1);
     
 }
 
 @layer components{
     .inputs{
         @apply flex items-center gap-[2px] border-[1px] border-[rgba(0,0,0,0.2)] rounded-[25px] pr-2 w-[270px]
+    }
+    .menuItems{
+        @apply flex items-center gap-2
     }
 }
