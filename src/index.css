@@ -3,17 +3,24 @@
 
 
 @theme{
-    --color-main-bg:#ffffff;
-    --color-main-text:#000000;
-    --color-main-cart:rgba(225,225,225,1);
     
+    --color-main-bg:#fff;
+    --color-main-text:#000000;
+    --color-main-cart:#fff;
+    --color-cart-admin:#ececec;
 }
 
 @layer components{
+    body{
+        @apply bg-[radial-gradient(ellipse_farthest-side_at_center,rgba(255,0,193,0.7),rgba(255,255,255,0.2))]
+    }
     .inputs{
         @apply flex items-center gap-[2px] border-[1px] border-[rgba(0,0,0,0.2)] rounded-[25px] pr-2 w-[270px]
     }
     .menuItems{
         @apply flex items-center gap-2
+    }
+    .profileCards{
+        @apply bg-cart-admin p-4 h-[110px] w-[200px] rounded-2xl self-center flex flex-col items-center
     }
 }

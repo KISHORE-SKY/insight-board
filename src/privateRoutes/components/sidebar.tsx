@@ -15,39 +15,51 @@ import Typography from '@mui/material/Typography';
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import LogoutIcon from '@mui/icons-material/Logout';
 import profifleimage from '../../assets/image/profile.jpg';
-
+import { logout } from '../authendicationSlice/authSlice';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function SideBarMenu(){
 
-     const [open, setOpen] = React.useState(false);
 
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
-  };
+    const navigate=useNavigate();
+    const dispatch=useDispatch();
 
-  const DrawerList = (
-    <Box sx={{ width: 250, height:'100vh',position:'relative' }} role="presentation" onClick={toggleDrawer(false)} className='bg-main-cart'>
-      <List>
-        <div className='flex items-center px-4 gap-1 py-6'>
-            <DashboardCustomizeIcon sx={{color:'blue'}}/>
-            <Typography variant='h6' component='h6' sx={{fontSize:'16px'}}>
-                Insight Admin
-            </Typography>
-        </div>
-        {['Repositories', 'Languages', 'Contributions', 'Commit Streak'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <SpaceDashboardIcon /> : <DashboardIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
+    function logoutHandler(){
+        dispatch(logout());
+        navigate("/");
+    }
+
+
+    const [open, setOpen] = React.useState(false);
+
+    const toggleDrawer = (newOpen: boolean) => () => {
+        setOpen(newOpen);
+    };
+
+    const DrawerList = (
+        <Box sx={{ width: 250, height:'100vh',position:'relative' }} role="presentation" onClick={toggleDrawer(false)} className='bg-main-cart'>
+        <List>
+            <div className='flex items-center px-4 gap-1 py-6'>
+                <DashboardCustomizeIcon sx={{color:'blue'}}/>
+                <Typography variant='h6' component='h6' sx={{fontSize:'16px'}}>
+                    Insight Admin
+                </Typography>
+            </div>
+            {['Repositories', 'Languages', 'Contributions', 'Commit Streak'].map((text, index) => (
+            <ListItem key={text} disablePadding>
+                <ListItemButton>
+                    <ListItemIcon>
+                        {index % 2 === 0 ? <SpaceDashboardIcon /> : <DashboardIcon />}
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                </ListItemButton>
+            </ListItem>
         ))}
-      </List>
-      <Divider />
+       </List>
+       <Divider />
         
         <div className='bg-main-cart mt-4 flex flex-col items-center w-full justify-center absolute bottom-0 left-0'>
             <div className='flex items-center  gap-[4px] p-2 px-6'>
@@ -58,7 +70,7 @@ function SideBarMenu(){
                 </div>
                 
             </div>
-            <div className='flex items-center  gap-1 pb-4'>
+            <div className='flex items-center gap-1 pb-4 cursor-pointer' onClick={logoutHandler}>
                 <Typography variant='h6' component='h6' sx={{fontSize:'18px'}}>
                     Logout
                 </Typography>

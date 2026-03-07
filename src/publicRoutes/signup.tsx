@@ -80,7 +80,7 @@ function Signup() {
         }
     return(
         <>
-            <div className="flex flex-col items-center justify-center gap-3 relative z-[100] w-[310px] py-[50px] bg-main-bg
+            <div className="flex flex-col items-center justify-center gap-3 relative z-[100] w-[310px] py-[50px] 
             before:content-[''] before:w-[115px] before:h-[100px] before:bg-[#6A0DAD] before:absolute before:top-[45px]
              before:right-[-5px] before:z-[2] before:rounded-[25%_75%_75%_25%_/_74%_41%_26%_26%]
              after:content-[''] after:w-[125px] after:h-[100px] after:bg-[#00C896] after:absolute after:bottom-[9px]
