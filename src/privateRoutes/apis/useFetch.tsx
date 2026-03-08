@@ -34,7 +34,7 @@ function UseFetchHook() {
             }
             const result=await response.json();
             setData([result]);
-            console.log(result);
+            //console.log(result);
             //console.log(typeof result);
         }
         catch(error){
@@ -66,7 +66,7 @@ function UseFetchHook() {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-[250px] justify-end items-center gap-5 pt-6 
+                            <div className="grid grid-cols-[250px] justify-end items-center gap-7 pt-6 
                             md:grid-cols-[200px_200px_200px] md:justify-center">
                                 <div className="profileCards">
                                     <div className="flex items-center gap-2">

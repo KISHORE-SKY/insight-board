@@ -1,6 +1,6 @@
 import Navbar from './components/navbar';
 import UseFetchHook from '../privateRoutes/apis/useFetch'
-
+import LabelsAboveBars from '.././privateRoutes/components/graphs/barChart'
 
 function AdminDashboard() {
     
@@ -12,6 +12,9 @@ function AdminDashboard() {
                 </header>
                 <div className='pt-5 p-3'>
                     <UseFetchHook />
+                </div>
+                <div className='flex flex-col items-center py-5 px-2'>
+                    <LabelsAboveBars />
                 </div>
             </section>
         </>

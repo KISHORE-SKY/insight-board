@@ -21,6 +21,8 @@
         @apply flex items-center gap-2
     }
     .profileCards{
-        @apply bg-cart-admin p-4 h-[110px] w-[200px] rounded-2xl self-center flex flex-col items-center
+        @apply bg-cart-admin p-4 h-[110px] w-[200px] rounded-2xl self-center flex flex-col items-center 
+        shadow-[0px_0px_15px_1px_rgba(0,0,0,0.2)] transform hover:-translate-y-1 transition duration-200 ease-in
+        cursor-pointer
     }
 }
