@@ -1,10 +1,10 @@
 import Typography from "@mui/material/Typography";
 import { useEffect, useState } from "react";
-import ComputerIcon from '@mui/icons-material/Computer';
-import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import fireImage from "../../assets/image/fire.png"
 import gitrepo from "../../assets/image/cloud.png"
 import follower from "../../assets/image/add-friend.png"
+import { useSelector } from "react-redux";
+import type { RootState } from "../../app/store.tsx";
 
 function UseFetchHook() {
     
@@ -47,6 +47,9 @@ function UseFetchHook() {
        fetchRepositary();
     },[])
 
+
+    const streak=useSelector((state:RootState)=>state.streak.count)
+
     return(
         <>
             <section className="grid grid-cols-[minmax(270px,290px)] pt-6 justify-center items-center 
@@ -87,7 +90,7 @@ function UseFetchHook() {
 
                                 <div className="profileCards">
                                     <img src={fireImage} alt="fire image" className="w-[50px]" />
-                                    <p className="text-lg">Day Streak</p>
+                                    <p className="text-lg">{streak} Day Streak</p>
                                 </div>
                             </div>
                         

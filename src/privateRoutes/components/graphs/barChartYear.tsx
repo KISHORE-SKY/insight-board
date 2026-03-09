@@ -5,10 +5,6 @@ import { ChartsXAxis } from '@mui/x-charts/ChartsXAxis';
 import { ChartsYAxis } from '@mui/x-charts/ChartsYAxis';
 import { styled } from '@mui/material/styles';
 import { interpolateObject } from '@mui/x-charts-vendor/d3-interpolate';
-//import { BarLabelProps } from '@mui/x-charts';
-//import { BarLabel} from '@mui/x-charts';
-
-
 
 
 import { useEffect, useState } from "react";
@@ -21,14 +17,15 @@ export default function LabelsAboveBars() {
 
 
     interface pushesContribution{
-    total:{
-        2023:number,
-        2024:number,
-        2025:number,
-        2026:number,
-    },
-    contributions:number,
-}
+        total:{
+            2023:number,
+            2024:number,
+            2025:number,
+            2026:number,
+        }
+    
+    }
+
 
 
     const [datas,setDatas]=useState<pushesContribution[]>([]);
@@ -46,7 +43,7 @@ export default function LabelsAboveBars() {
                 }
                 const result=await response.json();
                 setDatas([result]);
-                console.log(result);
+                //console.log(result);
             }
             catch(error){
                 setError(`contribution datas can't fetch`);
@@ -62,7 +59,6 @@ export default function LabelsAboveBars() {
         [datas[0].total[2023],datas[0].total[2024],datas[0].total[2025],datas[0].total[2026]] 
         :
         [0,0,0,0];
-
 
   return (
     <>
@@ -91,6 +87,8 @@ export default function LabelsAboveBars() {
             <ChartsYAxis />
 
         </ChartContainer>
+
+
         </section>
     </>
 
