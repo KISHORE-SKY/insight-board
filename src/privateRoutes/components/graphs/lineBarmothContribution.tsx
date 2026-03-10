@@ -35,7 +35,7 @@ export default function BasicLineChart() {
             //console.log(result);
             
         }
-        catch(error){
+        catch(err){
             setError(`can't fetch datas`);
             console.log(error);
         }

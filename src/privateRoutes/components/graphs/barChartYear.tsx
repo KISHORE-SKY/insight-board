@@ -45,7 +45,7 @@ export default function LabelsAboveBars() {
                 setDatas([result]);
                 //console.log(result);
             }
-            catch(error){
+            catch(err){
                 setError(`contribution datas can't fetch`);
                 console.log(error);
             }
