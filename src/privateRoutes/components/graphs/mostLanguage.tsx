@@ -25,7 +25,7 @@ function MostLanguagesUsed() {
             console.log(result);
             
         }
-        catch(error){
+        catch(err){
             setError(`can't find the repos`);
             console.log(error);
         }

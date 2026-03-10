@@ -37,7 +37,7 @@ function UseFetchHook() {
             //console.log(result);
             //console.log(typeof result);
         }
-        catch(error){
+        catch(err){
             setError('something fishy!');
             console.log(error);
         }
