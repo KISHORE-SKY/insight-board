@@ -1,7 +1,7 @@
 import Navbar from './components/navbar';
 import UseFetchHook from '../privateRoutes/apis/useFetch'
 import LabelsAboveBars from './components/graphs/barChartYear'
-import AreaBaseline from "./components/graphs/lineBarmothContribution"
+import BasicLineChart from "./components/graphs/lineBarmothContribution"
 import MostLanguagesUsed from "./components/graphs/mostLanguage"
 
 function AdminDashboard() {
@@ -19,7 +19,7 @@ function AdminDashboard() {
                     <LabelsAboveBars />
                 </div>
                 <div className='flex flex-col items-center'>
-                    <AreaBaseline />
+                    <BasicLineChart />
                 </div>
                 <div>
                     <MostLanguagesUsed />

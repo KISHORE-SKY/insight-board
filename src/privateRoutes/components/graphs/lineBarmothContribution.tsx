@@ -1,12 +1,14 @@
 import Typography from '@mui/material/Typography';
+//import { LineChart } from '@mui/x-charts/LineChart';
 import { LineChart } from '@mui/x-charts/LineChart';
+
 import { useEffect, useState } from 'react';
 import { setStreaks } from '../../authendicationSlice/streakSlice';
 import { useDispatch } from 'react-redux';
 
 
 
-export default function AreaBaseline() {
+export default function BasicLineChart() {
 
     interface contribution{
         date:string,
@@ -74,18 +76,17 @@ export default function AreaBaseline() {
                 </Typography>
             </div>
             <LineChart
-                xAxis={[{ data:xAxis }]}
-                series={[
-                {
-                    data: series,
-                    area: true,
-                    baseline: 'min',
-                },
-                ]}
-                height={300}
-                sx={{boxShadow:'4px 0px 15px 1px rgba(0,0,0,0.3)',borderRadius:'10px',width:'auto'}}
-                className='bg-cart-admin rounded-lg self-center pr-2'
-            />
+                xAxis={[{ data: xAxis }]}
+            series={[
+            {
+                data: series,
+                color:'#007a75'
+            },
+        ]}
+        height={300}
+        sx={{boxShadow:'4px 0px 15px 1px rgba(0,0,0,0.3)',borderRadius:'10px',width:'auto'}}
+                className='bg-cart-admin rounded-lg self-center pr-2'/>
+
         </div>
 
     </>
