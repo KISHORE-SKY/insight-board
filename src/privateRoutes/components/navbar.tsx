@@ -27,7 +27,7 @@ function Navbar(){
                 <div className='flex items-center gap-2 lg:gap-3'>
                     <div className='hidden md:flex md:items-center md:gap-1'>
                         <DashboardCustomizeIcon sx={{color:'blue'}}/>
-                        <Typography variant='h6' component='h6' sx={{fontSize:'16px'}}>
+                        <Typography variant='h6' component='h6' sx={{fontSize:'16px',fontWeight:'bold'}}>
                             Insight Admin
                         </Typography>
                     </div>

@@ -1,7 +1,6 @@
 import Typography from '@mui/material/Typography';
 import { LineChart } from '@mui/x-charts/LineChart';
 import { useEffect, useState } from 'react';
-//import { Dispatch } from '@reduxjs/toolkit';
 import { setStreaks } from '../../authendicationSlice/streakSlice';
 import { useDispatch } from 'react-redux';
 
@@ -45,36 +44,32 @@ export default function AreaBaseline() {
     },[])
 
      const lastThreeMonths=datas?.contributions.slice(40,70) ?? [];
-     //console.log(lastThreeMonths);
     
     const xAxis=lastThreeMonths.map(item=>
         new Date(item.date).getDate()
     );
     const series=lastThreeMonths.map(item=>item.count)
-    //console.log(series);
     let currentStreak=0;
-  
-    for(let i=0;i<=series.length;i++){
-        if(series[i]>0){
-            currentStreak++;
-        }
-        else{
-            break;
-        }
-    }
-   // console.log(currentStreak);
     const dispatch=useDispatch();
-    dispatch(setStreaks(currentStreak));
-   
-    
-    
-    
+    useEffect(()=>{
+        for(let i=series.length-1;i>=0;i--){
+            if(series[i]>0){
+                currentStreak++;
+            }
+            else{
+                break;
+            }
+        }
+
+        
+        dispatch(setStreaks(currentStreak));
+    },[series])
 
   return (
     <>
         <div className='flex flex-col items-center w-full px-2 py-4 gap-4 sm:w-[500px] lg:w-[650px] sm:p-4'>
             <div>
-                <Typography variant='h6' component='h6' sx={{fontSize:'20px'}}>
+                <Typography variant='h6' component='h6' sx={{fontSize:'23px'}}>
                     Last 30 days Contributions
                 </Typography>
             </div>

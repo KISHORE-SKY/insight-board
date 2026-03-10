@@ -48,7 +48,7 @@ function SideBarMenu(){
                     Insight Admin
                 </Typography>
             </div>
-            {['Repositories', 'Languages', 'Contributions', 'Commit Streak'].map((text, index) => (
+            {['Repositories', 'Yearly contributions', 'Last 30days contributions', 'Used languages'].map((text, index) => (
             <ListItem key={text} disablePadding>
                 <ListItemButton>
                     <ListItemIcon>

@@ -25,4 +25,7 @@
         shadow-[0px_0px_15px_1px_rgba(0,0,0,0.2)] transform hover:-translate-y-1 transition duration-200 ease-in
         cursor-pointer
     }
+    .languageBoxes{
+        @apply flex items-center gap-1
+    }
 }

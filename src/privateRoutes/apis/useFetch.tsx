@@ -21,7 +21,7 @@ function UseFetchHook() {
 
     const [data,setData]=useState<Gitrepo[]>([]);
     const [error,setError]=useState<string | null>(null);
-    const [loading,setLoading]=useState<boolean>(false);
+    //const [loading,setLoading]=useState<boolean>(false);
 
     async function fetchRepositary():Promise<void> {
         const repoUrl:string=`https://api.github.com/users/KISHORE-SKY`;
