@@ -103,7 +103,7 @@ function Signup() {
                         <div className="text-center h-[79px] px-1">
                             <Typography variant="h5" component="h5" sx={{fontSize:'20px',textAlign:'center'}}>welcome to Insight Board</Typography>
                             <p className="bg-green-300 text-main-text w-fit p-1 
-                            rounded-lg text-[12px] text-center">use username as: demoUser, use email as: demouser456@gmail.com, use password as: demoPassword</p>
+                            rounded-lg text-[13px] text-center mt-1">use username as: demoUser, use email as: demouser456@gmail.com, use password as: demoPassword</p>
                         </div>
                         <div className="inputs">
                             <TextField type="text" placeholder="username" size="small" required value={username} onChange={usernameHandler}
@@ -167,7 +167,7 @@ function Signup() {
                             <Button variant="contained" type="submit" sx={{padding:'5px',borderRadius:'8px',textTransform:'none'}}>Signup</Button>
                         </div>
                         <div>
-                            <Typography variant="h6" component="h6" sx={{fontSize:'16px'}}>you are not new 
+                            <Typography variant="h6" component="h6" sx={{fontSize:'16px'}}>you already have account ? 
                                 <Link to="/" className="text-blue-500 text-[18px]"> login</Link>
                             </Typography>
                         </div>
