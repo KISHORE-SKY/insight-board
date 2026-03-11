@@ -37,9 +37,9 @@ function Navbar(){
                 </div>
 
                 <div className='flex items-center gap-2 md:gap-4 lg:gap-6'>
-                    <div>
+                    {/* <div>
                         <GroupAvatars />
-                    </div>
+                    </div> */}
                     <div className='flex items-center gap-[2px] cursor-pointer' onClick={logoutHandler}>
                         <LogoutIcon sx={{fontSize:'20px'}} />
                         <Typography variant='h6' component='h6' sx={{fontSize:'15px'}} className='hidden sm:inline-block'>
