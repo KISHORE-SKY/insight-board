@@ -5,7 +5,7 @@ import profifleimage from '../../assets/image/profile.jpg';
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import LogoutIcon from '@mui/icons-material/Logout';
 import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
-import GroupAvatars from '../components/notifyavatars'
+//import GroupAvatars from '../components/notifyavatars'
 import { logout } from '../authendicationSlice/authSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';

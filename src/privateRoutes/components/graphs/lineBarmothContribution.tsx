@@ -32,7 +32,7 @@ export default function BasicLineChart() {
             }
             const result=await response.json();
             setDatas(result);
-            //console.log(result);
+           // console.log(result);
             
         }
         catch(err){
@@ -45,7 +45,8 @@ export default function BasicLineChart() {
         contributionFetched();
     },[])
 
-     const lastThreeMonths=datas?.contributions.slice(40,70) ?? [];
+     const lastThreeMonths=datas?.contributions.slice(0,30) ?? [];
+     //console.log(lastThreeMonths);
     
     const xAxis=lastThreeMonths.map(item=>
         new Date(item.date).getDate()
